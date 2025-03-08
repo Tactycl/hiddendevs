@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="description" content="Roblox Game-Maker Studio" />
+        <meta name="keywords" content="Roblox, Tarylem, Game-Maker Studio, Games, Roblox Games, Racing Games">
+        <meta name="author" content="Tarylem, Tactical">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Tarylem</title>
+        <link rel="icon" type="image/x-icon" href="img/favicon.ico"/>
+        <link rel="stylesheet" href="styles/style.css">
+        <link rel="stylesheet" href="styles/fonts.css">
+        <link rel="stylesheet" href="styles/all.min.css">
+    </head>
+    <body>
+        <!-- header of the website, it has a banner described in the css and some buttons linking to other .phps (.php because I need to include the footer) -->
+        <section class="header">
+            <nav>
+                <a href="home"><img src="img/logo.png"></a>
+                <div class="nav-links" id="navLinks">
+                    <ul>
+                        <li><a href="home">HOME</a></li>
+                        <li><a href="about">ABOUT</a></li>
+                        <li><a href="team">TEAM</a></li>
+                        <li><a href="contact">CONTACT</a></li>
+                        <li><a href="profile" id="profile-button">PROFILE</a></li>
+                    </ul>
+                </div>
+                <i class="fa fa-bars"></i>
+            </nav>
+            <div class="text-box">
+                <h1>A Roblox Game Maker Studio</h1>
+                <p>We in Tarylem make games in Roblox for other Users to enjoy and play.</p>
+                <a href="about" class="hero-btn">Visit Us To Know More</a>
+            </div>
+        </section>
+
+        <!-- basically worthless without the .js, the <template> is used in the JS (different folder for other application) to load all games and their data. It uses a table and rows for the icons and the statistics. -->
+        <section class="games">
+            <h1>Games Made With Tarylem</h1>
+            <p>Here are games that have been made by Tarylem or are partnered with Tarylem.</p>
+
+            <div class="games-table">
+                <template id="game-col-template">
+                    <div class="game-col-" id="game-col">
+                        <h3 class="game-title"></h3>
+                        <table id="game-stats">
+                        <tr>
+                            <td><i class="fa-solid fa-user" id="game-stat-icon"></i></td>
+                            <td><i class="fa-solid fa-location-pin" id="game-stat-icon"></i></td>
+                            <td><i class="fa-solid fa-star" id="game-stat-icon"></i></td>
+                            <td><i class="fa-solid fa-thumbs-up" id="game-stat-icon"></i></td>
+                        </tr>
+                        <tr>
+                            <td> <p id="game-stat" class="playing"></p> </td>
+                            <td> <p id="game-stat" class="visits"></p> </td>
+                            <td> <p id="game-stat" class="favorited"></p> </td>
+                            <td> <p id="game-stat" class="likes"></p> </td>
+                        </tr>
+                        </table>
+                        <a href="" class="view-btn" target="_blank"><p class="view-btn">View Game</p></a>
+                    </div>
+                </template>
+            </div>
+
+            <a href="team" class="hero-btn-2">Who Made These Games?</a>
+        </section>
+
+        <!-- call to action to contact with the contact page when finding bugs or wanting to work with me. -->
+        <section class="cta">
+            <h1>Want to report bugs<br>or<br>help us make the games?</h1>
+            <a href="contact" class="hero-btn">CONTACT US</a>
+        </section>
+        
+        <?php include "includes/footer.php"?> <!-- ignore this php line -->
+
+        <!-- just javascript inserts -->
+        <script src="js/navui.js" defer></script>
+        <script src="js/scroll.js" defer></script>
+        <script src="js/loadgames.js" defer></script>
+        <script src="js/loadprofile.js" defer></script>
+    </body>
+</html>
