@@ -12,6 +12,7 @@
         <link rel="stylesheet" href="styles/all.min.css">
     </head>
     <body>
+        <!-- Also I have no idea what you mean with html/css so I submitted 3 html files (.php because of the include at the end), if you want to see CSS it's in the html-css folder in the repo too -->
         <!-- header of the website, it has a banner described in the css and some buttons linking to other .phps (.php because I need to include the footer) -->
         <section class="header">
             <nav>
