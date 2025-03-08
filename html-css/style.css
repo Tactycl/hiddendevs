@@ -1,0 +1,114 @@
+/* it's really annoying having to comment all of this to show that I wrote this, since it's my website I'll just not comment this as much and you can look in the video to see I own https://www.tarylem.com */
+
+/* some variables */
+:root {
+    --primary-color: #F5FFFB;
+    --secondary-color: #8C00FF;
+}
+
+/* resets all properties of all items so no defaults are applied */
+* {
+    margin: 0;
+    padding: 0;
+    font-family: "Noto Sans Display";
+}
+
+/* header info, minimal height is 100 viewport height and 100% width, background image uses cover and is at the center and is also made darker. */
+.header {
+    min-height: 100vh;
+    width: 100%;
+    background-image: linear-gradient(rgba(4, 9, 30, 0.7), rgba(4, 9, 30, 0.7)), url(../img/banner.png);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position-y: 0px;
+    position: relative;
+}
+
+/* sub-header basically the same but 50vh and not 100vh */
+.sub-header {
+    height: 50vh;
+    width: 100%;
+    background-image: linear-gradient(rgba(4, 9, 30, 0.7), rgba(4, 9, 30, 0.7)), url(../img/banner.png);
+    background-position: center;
+    background-size: cover;
+    text-align: center;
+    background-repeat: no-repeat;
+    color: var(--primary-color);
+}
+
+/* the header in sub-header has a margin at the top of 100px */
+.sub-header h1 {
+    margin-top: 100px;
+}
+
+/* display is flex, so it's all layed out in a row. Items (buttons) are aligned in the center of the parent <nav> */
+nav {
+    display: flex;
+    padding: 2% 6%;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.....
+... /* here was more but it was 700 lines */
+....
+
+/* mobile changes, changes some .css properties if your screen width is below 700px, for example your <nav> bar turns into a hamburger-menu */
+
+@media(max-width: 700px) {
+    .row {
+        flex-direction: column;
+    }
+
+    .cta h1 {
+        font-size: 24px;
+    }
+
+    .text-box h1 {
+        font-size: 20px;
+    }
+
+    .nav-links ul li {
+        display: block;
+    }
+
+    nav:has(.nav-links) i {
+        z-index: 3;
+    }
+
+    .nav-links {
+        display: none;
+        position: fixed;
+        backdrop-filter: blur(10px);
+        background: rgba(0, 0, 0, .5);
+        height: 100vh;
+        width: 100vw;
+        left: 0;
+        top: 0;
+        opacity: 0;
+        z-index: 2;
+        transition: .5s;
+        text-align: center;
+    }
+
+    .nav-links ul li::after {
+        display: none;
+    }
+
+    nav .fa {
+        display: block;
+        color: var(--primary-color);
+        margin: 10px;
+        font-size: 22px;
+        cursor: pointer;
+    }
+
+    .nav-links ul {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        padding: 30px;
+    }
+}
